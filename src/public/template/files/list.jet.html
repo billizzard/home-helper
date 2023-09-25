@@ -1,0 +1,47 @@
+{{extends "../layout/main.jet.html"}}
+
+{{ block body()}}
+
+<h1 class="page-title">Files</h1>
+
+
+
+<div class="file-list_body">
+<!--    <div class="file-list_header"></div>-->
+    <div class="files-box">
+        {{range _, file := data.Folders}}
+        <a class='file_body' href='{{ urlpath }}'>
+            <div class='file_button folder'>
+                <i class="bi bi-{{file.Icon}}"></i>
+            </div>
+            <div class="file_desc">
+                {{file.Name}}
+            </div>
+        </a>
+        {{end}}
+
+        {{range _, file := data.Files}}
+            <div class='file_body'>
+                <div class='file_button'>
+                    <i class="bi bi-{{file.Icon}}"></i>
+                </div>
+                <div class="file_desc">
+                    {{file.Name}}
+                </div>
+            </div>
+        {{end}}
+    </div>
+</div>
+
+
+
+<!--<div class="file-list_body">-->
+<!--    <div class="file-list_header"></div>-->
+<!--    {{range _, file := data.Files}}-->
+<!--    <div class="file-list_row">-->
+<!--        <i class="bi bi-{{file.Icon}}"></i>-->
+<!--        {{file.Name}}-->
+<!--    </div>-->
+<!--    {{end}}-->
+<!--</div>-->
+{{ end }}

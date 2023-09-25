@@ -1,0 +1,40 @@
+/*----------------------------MENU BUTTON-------------------*/
+.menu-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.menu-button {
+  text-decoration: none;
+  color: $mainText;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: $mainBg;
+  border-radius: 30px;
+  box-shadow: 28px 28px 50px $menuButShadowBot,
+  -28px -28px 50px $menuButShadowTop;
+  border: 1px solid $menuButShadowTop;
+  transition: box-shadow 0.1s ease-in-out;
+
+  &:active {
+    transition: 0.5s;
+    box-shadow: 0 0 0 $menuButShadowBot,
+    -0 -0 0 $menuButShadowTop;
+  }
+
+  .bi {
+    font-size: 70px;
+  }
+}
+
+.menu-button_title {
+  font-size: 24px;
+  text-align: center;
+}
+
+/*----------------------------MENU BUTTON END-------------------*/
