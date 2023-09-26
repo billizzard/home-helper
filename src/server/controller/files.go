@@ -1,30 +1,16 @@
 package controller
 
 import (
-	"errors"
 	"github.com/kataras/iris/v12"
-	"homeHelper/config"
-	"homeHelper/src/server/dto/file"
-	"log"
-	"os"
+	handler "homeHelper/src/server/handler/file"
 )
 
 func FileList(ctx iris.Context) {
-	//ctx.Bad
-	if !checkPath(ctx.URLParam("path")) {
-		ctx.StopWithError(404, errors.New("Bdfddfdfd"))
-		return
-	}
-	// проверить будет ли идти на уровень выше если передать ..
-	files, err := os.ReadDir(config.APP["USER_FILES_FOLDER"])
+	dto, err := handler.FileListHandler(ctx.URLParam("path"))
 	if err != nil {
-		log.Fatal(err)
-	}
+		ctx.StopWithError(404, err)
 
-	dto := file.NewFileList("Files", ctx.URLParam("path"))
-
-	for _, fileInfo := range files {
-		dto.AddFile(fileInfo)
+		return
 	}
 
 	ctx.ViewData("data", dto)
@@ -35,11 +21,8 @@ func FileList(ctx iris.Context) {
 	}
 }
 
-func checkPath(path string) bool {
-	return true
-}
-
 func FileUpload(ctx iris.Context) {
+
 	// Get the file from the request.
 	//fmt.Println("dfdfdfdfdfdfdfd")
 	//f, fh, err := ctx.FormFile("uploadfile")
