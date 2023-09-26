@@ -22,7 +22,7 @@
   transition: box-shadow 0.1s ease-in-out;
 
   &:active {
-    transition: 0.5s;
+    transition: 0.1s;
     box-shadow: 0 0 0 $menuButShadowBot,
     -0 -0 0 $menuButShadowTop;
   }

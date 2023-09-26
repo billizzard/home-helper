@@ -17,4 +17,4 @@ to check success installation
 
 Then just run
 
-` sass src/public/assets/scss/main.scss src/public/assets/css/main.css`
+`sass src/public/assets/scss/main.scss src/public/assets/css/main.css`

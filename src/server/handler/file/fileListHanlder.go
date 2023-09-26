@@ -4,7 +4,6 @@ import (
 	"errors"
 	"homeHelper/src/server/dto/file"
 	"homeHelper/src/server/services"
-	"log"
 	"os"
 )
 
@@ -16,7 +15,7 @@ func FileListHandler(path string) (*file.FileList, error) {
 	// проверить будет ли идти на уровень выше если передать ..
 	files, err := os.ReadDir(services.GetFilePathByUrl(path))
 	if err != nil {
-		log.Fatal(err)
+		return nil, errors.New("Cannot read directory")
 	}
 
 	dto := file.NewFileList("Files", path)

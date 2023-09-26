@@ -31,29 +31,52 @@
 .files-box {
   display: flex;
 
-  .file_body {
+  .file_box {
     width: 160px;
     text-align: center;
+    text-decoration: none;
+    color: $mainText;
+
+    .file_back_button {
+      margin-left: 49px;
+      margin-top: 25px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $mainBg;
+      border-radius: 15px;
+      font-size: 38px;
+      box-shadow: 14px 14px 25px $menuButShadowBot, -14px -14px 25px $menuButShadowTop;
+      border: 1px solid $buttonBorder;
+      transition: box-shadow 0.1s ease-in-out;
+
+      &:active {
+        transition: 0.1s;
+        box-shadow: 0 0 0 $menuButShadowBot,
+        -0 -0 0 $menuButShadowTop;
+      }
+    }
 
     .file_button {
       font-size: 38px;
       margin: 0px auto;
       margin-bottom: 20px;
-      text-decoration: none;
       color: #5c5c5c;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 110px;
       height: 110px;
-      background-color: #ebecf2;
+      background-color: $mainBg;
       border-radius: 15px;
-      box-shadow: 14px 14px 25px #b1b2b7, -14px -14px 25px #fff;
-      border: 1px solid #fff;
+      box-shadow: 14px 14px 25px $menuButShadowBot, -14px -14px 25px $menuButShadowTop;
+      border: 1px solid $buttonBorder;
       transition: box-shadow 0.1s ease-in-out;
 
       &:active {
-        transition: 0.5s;
+        transition: 0.1s;
         box-shadow: 0 0 0 $menuButShadowBot,
         -0 -0 0 $menuButShadowTop;
       }
@@ -62,5 +85,13 @@
         background-color: #e5e8f9;
       }
     }
+  }
+
+  .message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
   }
 }

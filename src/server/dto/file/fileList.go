@@ -3,13 +3,16 @@ package file
 import (
 	"net/url"
 	"os"
+	"strings"
 )
 
 type FileList struct {
-	Title   string
-	Path    string
-	Folders []File
-	Files   []File
+	Title      string
+	Path       string
+	PrevPath   string
+	FilesCount int
+	Folders    []File
+	Files      []File
 }
 
 type File struct {
@@ -23,6 +26,8 @@ func NewFileList(title string, path string) *FileList {
 	model := FileList{}
 	model.Title = title
 	model.Path = path
+	model.FilesCount = 0
+	model.PrevPath = model.getPrevPath(path)
 
 	return &model
 }
@@ -32,8 +37,10 @@ func (fl *FileList) AddFile(file os.DirEntry) {
 		Name:  file.Name(),
 		IsDir: file.IsDir(),
 		Icon:  fl.getIconByName(file),
-		Link:  url.QueryEscape(file.Name()),
+		Link:  fl.Path + "/" + url.QueryEscape(file.Name()),
 	}
+
+	fl.FilesCount++
 
 	if file.IsDir() {
 		fl.Folders = append(fl.Folders, f)
@@ -48,4 +55,14 @@ func (fl *FileList) getIconByName(file os.DirEntry) string {
 	}
 
 	return "file-earmark"
+}
+
+func (fl *FileList) getPrevPath(path string) string {
+	splitted := strings.Split(path, "/")
+
+	if len(splitted) < 2 {
+		return ""
+	}
+
+	return strings.Join(splitted[0:len(splitted)-1], "/")
 }

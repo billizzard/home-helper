@@ -6,7 +6,7 @@ import (
 )
 
 func FileList(ctx iris.Context) {
-	dto, err := handler.FileListHandler(ctx.URLParam("path"))
+	dto, err := handler.FileListHandler(ctx.Params().Get("path"))
 	if err != nil {
 		ctx.StopWithError(404, err)
 

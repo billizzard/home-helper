@@ -2,33 +2,58 @@
 
 {{ block body()}}
 
-<h1 class="page-title">Files</h1>
-
-
+<div class="title-box">
+    <a class="title-btn" href='/'>
+        <i class="bi bi-arrow-left-short"></i>
+    </a>
+    <h1 class="page-title">Files</h1>
+    <a class="title-btn" href='/' style="visibility: hidden">
+        <i class="bi bi-arrow-left-short"></i>
+    </a>
+</div>
 
 <div class="file-list_body">
 <!--    <div class="file-list_header"></div>-->
     <div class="files-box">
-        {{range _, file := data.Folders}}
-        <a class='file_body' href='{{ urlpath }}'>
-            <div class='file_button folder'>
-                <i class="bi bi-{{file.Icon}}"></i>
-            </div>
-            <div class="file_desc">
-                {{file.Name}}
-            </div>
-        </a>
-        {{end}}
+        {{ if data.PrevPath != "" }}
+            <a class='file_box' href='/files/{{data.PrevPath}}'>
+                <div class='file_back_button'>
+                    <i class="bi bi-arrow-left-short"></i>
+                </div>
+            </a>
+        {{ end }}
 
-        {{range _, file := data.Files}}
-            <div class='file_body'>
-                <div class='file_button'>
+        {{ if data.FilesCount > 0 }}
+            {{range _, file := data.Folders}}
+            <a class='file_box' href='/files/{{ file.Link }}'>
+                <div class='file_button folder'>
                     <i class="bi bi-{{file.Icon}}"></i>
                 </div>
                 <div class="file_desc">
                     {{file.Name}}
                 </div>
+            </a>
+            {{end}}
+
+            {{range _, file := data.Files}}
+                <div class='file_box'>
+                    <div class='file_button'>
+                        <i class="bi bi-{{file.Icon}}"></i>
+                    </div>
+                    <div class="file_desc">
+                        {{file.Name}}
+                    </div>
+                </div>
+            {{end}}
+        {{else}}
+            <div class="message">
+                Category is empty
             </div>
+
+            {{ if data.PrevPath != "" }}
+                <!--      to center the message      -->
+                <a class='file_box' style="visibility:hidden"></a>
+            {{ end }}
         {{end}}
     </div>
 </div>
