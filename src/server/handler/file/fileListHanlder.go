@@ -15,6 +15,7 @@ func FileListHandler(path string) (*file.FileList, error) {
 	// проверить будет ли идти на уровень выше если передать ..
 	files, err := os.ReadDir(services.GetFilePathByUrl(path))
 	if err != nil {
+		// todo: log
 		return nil, errors.New("Cannot read directory")
 	}
 

@@ -1,24 +1,44 @@
 package controller
 
 import (
+	"errors"
 	"github.com/kataras/iris/v12"
 	handler "homeHelper/src/server/handler/file"
+	"homeHelper/src/server/services"
+	"homeHelper/src/server/services/http"
 )
 
 func FileList(ctx iris.Context) {
+	isDir, err := services.IsDir(ctx.Params().Get("path"))
+	if err != nil {
+		http.HttpNotFound(ctx, errors.New("Page not found"))
+
+		return
+	}
+
+	if !isDir {
+		ShowFile(ctx)
+
+		return
+	}
+
 	dto, err := handler.FileListHandler(ctx.Params().Get("path"))
 	if err != nil {
-		ctx.StopWithError(404, err)
+		http.HttpNotFound(ctx, errors.New("Page not found"))
 
 		return
 	}
 
 	ctx.ViewData("data", dto)
-
 	if err := ctx.View("files/list.jet.html"); err != nil {
 		ctx.HTML("<h3>%s</h3>", err.Error())
 		return
 	}
+}
+
+// если разрастется перенести в отдельный контроллер file
+func ShowFile(ctx iris.Context) {
+	ctx.HTML("<h3>%s</h3>", "File: "+ctx.Params().Get("path"))
 }
 
 func FileUpload(ctx iris.Context) {

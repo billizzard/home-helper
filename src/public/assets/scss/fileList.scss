@@ -48,15 +48,6 @@
       background-color: $mainBg;
       border-radius: 15px;
       font-size: 38px;
-      box-shadow: 14px 14px 25px $menuButShadowBot, -14px -14px 25px $menuButShadowTop;
-      border: 1px solid $buttonBorder;
-      transition: box-shadow 0.1s ease-in-out;
-
-      &:active {
-        transition: 0.1s;
-        box-shadow: 0 0 0 $menuButShadowBot,
-        -0 -0 0 $menuButShadowTop;
-      }
     }
 
     .file_button {
@@ -71,15 +62,6 @@
       height: 110px;
       background-color: $mainBg;
       border-radius: 15px;
-      box-shadow: 14px 14px 25px $menuButShadowBot, -14px -14px 25px $menuButShadowTop;
-      border: 1px solid $buttonBorder;
-      transition: box-shadow 0.1s ease-in-out;
-
-      &:active {
-        transition: 0.1s;
-        box-shadow: 0 0 0 $menuButShadowBot,
-        -0 -0 0 $menuButShadowTop;
-      }
 
       &.folder {
         background-color: #e5e8f9;
