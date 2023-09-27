@@ -3,11 +3,39 @@ body {
   color: #5c5c5c;
 }
 
+.fix-blink {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.shadow {
+  transition: box-shadow 0.1s ease-in-out;
+  border: 1px solid #fff;
+}
+.shadow.menu-btn {
+  box-shadow: 28px 28px 50px #b1b2b7, -28px -28px 50px #fff;
+}
+.shadow.file-btn {
+  box-shadow: 14px 14px 25px #b1b2b7, -14px -14px 25px #fff;
+}
+.shadow.title-btn {
+  box-shadow: 7px 7px 13px #b1b2b7, -7px -7px 13px #fff;
+}
+.shadow:active {
+  transition: 0.1s;
+  box-shadow: 0 0 0 #b1b2b7, 0 0 0 #fff;
+}
+
 .title-box {
   display: flex;
   flex-direction: row;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   justify-content: center;
   align-items: center;
 }
@@ -22,14 +50,7 @@ body {
   background-color: #ebecf2;
   border-radius: 10px;
   font-size: 26px;
-  box-shadow: 7px 7px 13px #b1b2b7, -7px -7px 13px #fff;
-  border: 1px solid #fff;
-  transition: box-shadow 0.1s ease-in-out;
   margin-right: 30px;
-}
-.title-box .title-btn:active {
-  transition: 0.1s;
-  box-shadow: 0 0 0 #b1b2b7, 0 0 0 #fff;
 }
 .title-box .page-title {
   font-size: 40px;
@@ -60,6 +81,7 @@ body {
 /*----------------------------FILE LIST END-------------------*/
 .files-box {
   display: flex;
+  flex-wrap: wrap;
 }
 .files-box .file_box {
   width: 160px;
@@ -78,13 +100,6 @@ body {
   background-color: #ebecf2;
   border-radius: 15px;
   font-size: 38px;
-  box-shadow: 14px 14px 25px #b1b2b7, -14px -14px 25px #fff;
-  border: 1px solid #fff;
-  transition: box-shadow 0.1s ease-in-out;
-}
-.files-box .file_box .file_back_button:active {
-  transition: 0.1s;
-  box-shadow: 0 0 0 #b1b2b7, 0 0 0 #fff;
 }
 .files-box .file_box .file_button {
   font-size: 38px;
@@ -98,13 +113,6 @@ body {
   height: 110px;
   background-color: #ebecf2;
   border-radius: 15px;
-  box-shadow: 14px 14px 25px #b1b2b7, -14px -14px 25px #fff;
-  border: 1px solid #fff;
-  transition: box-shadow 0.1s ease-in-out;
-}
-.files-box .file_box .file_button:active {
-  transition: 0.1s;
-  box-shadow: 0 0 0 #b1b2b7, 0 0 0 #fff;
 }
 .files-box .file_box .file_button.folder {
   background-color: #e5e8f9;
@@ -117,6 +125,26 @@ body {
   font-size: 30px;
 }
 
+.empty-box {
+  display: flex;
+  width: 100%;
+}
+
+.file-action-btn {
+  font-size: 38px;
+  color: #5c5c5c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #ebecf2;
+  border-radius: 10px;
+}
+.file-action-btn.folder {
+  background-color: #e5e8f9;
+}
+
 /*----------------------------MENU BUTTON-------------------*/
 .menu-body {
   display: flex;
@@ -127,13 +155,6 @@ body {
 
 .menu-button {
   flex-direction: column;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   text-decoration: none;
   color: #5c5c5c;
   display: flex;
@@ -143,13 +164,6 @@ body {
   height: 200px;
   background-color: #ebecf2;
   border-radius: 30px;
-  box-shadow: 28px 28px 50px #b1b2b7, -28px -28px 50px #fff;
-  border: 1px solid #fff;
-  transition: box-shadow 0.1s ease-in-out;
-}
-.menu-button:active {
-  transition: 0.1s;
-  box-shadow: 0 0 0 #b1b2b7, 0 0 0 #fff;
 }
 .menu-button .bi {
   font-size: 70px;

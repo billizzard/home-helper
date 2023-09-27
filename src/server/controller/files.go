@@ -60,7 +60,7 @@ func FileUpload(ctx iris.Context) {
 	//	return
 	//}
 
-	_, _, err := ctx.UploadFormFiles("./uploads")
+	_, _, err := ctx.UploadFormFiles("./user/files")
 	if err != nil {
 		ctx.StatusCode(iris.StatusInternalServerError)
 		ctx.HTML("Error while uploading: <b>" + err.Error() + "</b>")

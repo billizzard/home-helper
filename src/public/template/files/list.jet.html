@@ -3,7 +3,7 @@
 {{ block body()}}
 
 <div class="title-box">
-    <a class="title-btn shadow title-btn" href='/'>
+    <a class="title-btn shadow title-btn fix-blink" href='/' ontouchstart="">
         <i class="bi bi-arrow-left-short"></i>
     </a>
     <h1 class="page-title">Files</h1>
@@ -13,20 +13,31 @@
 </div>
 
 <div class="file-list_body">
-<!--    <div class="file-list_header"></div>-->
+    <div class="file-list_header">
+        <div class='file-action-btn shadow file-btn fix-blink js-f-upload'>
+            <i class="bi bi-arrow-left-short"></i>
+        </div>
+
+        <form method="post" action="/files/upload" enctype="multipart/form-data">
+            <input type="file" name="uploadfile" multiple>
+            <input type="hidden" name="folder" value="{{data.Path}}">
+            <input type="submit">
+        </form>
+    </div>
     <div class="files-box">
-        {{ if data.PrevPath != "" }}
-            <a class='file_box shadow file-btn' href='/files/{{data.PrevPath}}'>
-                <div class='file_back_button'>
-                    <i class="bi bi-arrow-left-short"></i>
-                </div>
-            </a>
-        {{ end }}
+
 
         {{ if data.FilesCount > 0 }}
+            {{ if data.PrevPath != "" }}
+                <a class='file_box fix-blink' href='/files/{{data.PrevPath}}' ontouchstart="">
+                    <div class='file_back_button shadow file-btn'>
+                        <i class="bi bi-arrow-left-short"></i>
+                    </div>
+                </a>
+            {{ end }}
             {{range _, file := data.Folders}}
-            <a class='file_box shadow file-btn' href='/files/{{ file.Link }}'>
-                <div class='file_button folder'>
+            <a class='file_box fix-blink' href='/files/{{ file.Link }}'>
+                <div class='file_button folder shadow file-btn' ontouchstart="">
                     <i class="bi bi-{{file.Icon}}"></i>
                 </div>
                 <div class="file_desc">
@@ -36,8 +47,8 @@
             {{end}}
 
             {{range _, file := data.Files}}
-                <div class='file_box shadow file-btn'>
-                    <div class='file_button'>
+                <div class='file_box fix-blink'>
+                    <div class='file_button shadow file-btn' ontouchstart="">
                         <i class="bi bi-{{file.Icon}}"></i>
                     </div>
                     <div class="file_desc">
@@ -46,14 +57,24 @@
                 </div>
             {{end}}
         {{else}}
-            <div class="message">
-                Category is empty
-            </div>
+            <div class="empty-box">
+                {{ if data.PrevPath != "" }}
+                <a class='file_box fix-blink' href='/files/{{data.PrevPath}}' ontouchstart="">
+                    <div class='file_back_button shadow file-btn'>
+                        <i class="bi bi-arrow-left-short"></i>
+                    </div>
+                </a>
+                {{ end }}
 
-            {{ if data.PrevPath != "" }}
-                <!--      to center the message      -->
-                <a class='file_box' style="visibility:hidden"></a>
-            {{ end }}
+                <div class="message">
+                    Category is empty
+                </div>
+
+                {{ if data.PrevPath != "" }}
+                    <!--      to center the message      -->
+                    <a class='file_box' style="visibility:hidden"></a>
+                {{ end }}
+            </div>
         {{end}}
     </div>
 </div>

@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20"
+  },
+  "scripts": {
+    "babel": "./node_modules/.bin/babel src/public/assets/jsSource --out-dir src/public/assets/js"
+  }
+}

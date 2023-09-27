@@ -15,7 +15,7 @@ import (
 var FileRoutes = func(app *iris.Application) {
 	booksAPI := app.Party("/files")
 	booksAPI.Get("/{path:path}", controller.FileList).Name = "fileList"
-	//booksAPI.Post("/upload", controller.FileUpload)
+	booksAPI.Post("/upload", controller.FileUpload)
 	// POST: http://localhost:8080/books
 	//booksAPI.Post("/", create)
 }

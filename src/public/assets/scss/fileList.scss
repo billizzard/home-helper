@@ -30,6 +30,7 @@
 
 .files-box {
   display: flex;
+  flex-wrap: wrap;
 
   .file_box {
     width: 160px;
@@ -54,7 +55,7 @@
       font-size: 38px;
       margin: 0px auto;
       margin-bottom: 20px;
-      color: #5c5c5c;
+      color: $mainText;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -75,5 +76,26 @@
     align-items: center;
     width: 100%;
     font-size: 30px;
+  }
+}
+
+.empty-box {
+  display: flex;
+  width: 100%;
+}
+
+.file-action-btn {
+  font-size: 38px;
+  color: $mainText;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: $mainBg;
+  border-radius: 10px;
+
+  &.folder {
+    background-color: #e5e8f9;
   }
 }
