@@ -11,6 +11,7 @@ func RunApi(port string) error {
 
 	app := initApp()
 	initRoutes(app)
+	initCors(app)
 
 	err := app.Listen(":" + port)
 	if err != nil {
@@ -35,4 +36,22 @@ func initRoutes(app *iris.Application) {
 	//routes.BookRoutes(app)
 	routes.FileRoutes(app)
 	routes.MenuRoutes(app)
+}
+
+func initCors(app *iris.Application) {
+	crs := func(ctx iris.Context) {
+		ctx.Header("Access-Control-Allow-Origin", "*")
+		ctx.Header("Access-Control-Allow-Credentials", "true")
+
+		if ctx.Method() == iris.MethodOptions {
+			ctx.Header("Access-Control-Methods", "POST, PUT, PATCH, DELETE")
+			ctx.Header("Access-Control-Allow-Headers", "Access-Control-Allow-Origin,Content-Type")
+			ctx.Header("Access-Control-Max-Age", "86400")
+			ctx.StatusCode(iris.StatusNoContent)
+			return
+		}
+
+		ctx.Next()
+	}
+	app.UseRouter(crs)
 }

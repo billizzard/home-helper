@@ -29,11 +29,13 @@ func FileList(ctx iris.Context) {
 		return
 	}
 
-	ctx.ViewData("data", dto)
-	if err := ctx.View("files/list.jet.html"); err != nil {
-		ctx.HTML("<h3>%s</h3>", err.Error())
-		return
-	}
+	ctx.JSON(dto)
+
+	//ctx.ViewData("data", dto)
+	//if err := ctx.View("files/list.jet.html"); err != nil {
+	//	ctx.HTML("<h3>%s</h3>", err.Error())
+	//	return
+	//}
 }
 
 // если разрастется перенести в отдельный контроллер file
