@@ -18,7 +18,7 @@ body {
   transition: box-shadow 0.1s ease-in-out;
   border: 1px solid $menuButShadowTop;
 
-  &.menu-btn {
+  &.menu-btn_shadow {
     box-shadow: 28px 28px 50px $menuButShadowBot,
       -28px -28px 50px $menuButShadowTop;
   }

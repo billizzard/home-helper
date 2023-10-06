@@ -28,14 +28,13 @@ func initApp() *iris.Application {
 	tmpl := iris.Jet("./src/public/template", ".jet.html")
 	tmpl.Reload(true) // reload templates on each request (development mode)
 	app.RegisterView(tmpl)
-
 	return app
 }
 
 func initRoutes(app *iris.Application) {
-	//routes.BookRoutes(app)
-	routes.FileRoutes(app)
-	routes.MenuRoutes(app)
+	api := app.Party("/api/v1")
+	routes.FileRoutes(&api)
+	routes.MenuRoutes(&api)
 }
 
 func initCors(app *iris.Application) {

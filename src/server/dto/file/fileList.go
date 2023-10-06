@@ -1,9 +1,9 @@
 package file
 
 import (
+	"homeHelper/src/server/services"
 	"net/url"
 	"os"
-	"strings"
 )
 
 type FileList struct {
@@ -27,12 +27,15 @@ func NewFileList(title string, path string) *FileList {
 	model.Title = title
 	model.Path = path
 	model.FilesCount = 0
-	model.PrevPath = model.getPrevPath(path)
+	model.Files = []File{}
+	model.Folders = []File{}
+	model.PrevPath = services.GetPrevPath(path)
 
 	return &model
 }
 
 func (fl *FileList) AddFile(file os.DirEntry) {
+
 	f := File{
 		Name:  file.Name(),
 		IsDir: file.IsDir(),
@@ -55,14 +58,4 @@ func (fl *FileList) getIconByName(file os.DirEntry) string {
 	}
 
 	return "file-earmark"
-}
-
-func (fl *FileList) getPrevPath(path string) string {
-	splitted := strings.Split(path, "/")
-
-	if len(splitted) < 2 {
-		return ""
-	}
-
-	return strings.Join(splitted[0:len(splitted)-1], "/")
 }
