@@ -13,6 +13,7 @@ type MenuItem struct {
 func NewMenuPage() *MenuPage {
 	model := MenuPage{}
 	model.addItem("Files", "folder", "/files/root")
+	model.addItem("Settings", "gear", "/settings")
 
 	return &model
 }

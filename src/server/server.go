@@ -24,10 +24,9 @@ func RunApi(port string) error {
 func initApp() *iris.Application {
 	app := iris.New()
 	app.HandleDir("/assets", "./src/public/assets")
+	//app.HandleDir("/public", "./user/files", iris.DirOptions{PushTargetsRegexp: regexp.MustCompile("((.*).jpg|(.*).jpeg|(.*).png)$")})
+	app.HandleDir("/public", "./user/files")
 	app.Use(iris.Compression)
-	tmpl := iris.Jet("./src/public/template", ".jet.html")
-	tmpl.Reload(true) // reload templates on each request (development mode)
-	app.RegisterView(tmpl)
 	return app
 }
 

@@ -2,13 +2,15 @@ package config
 
 import (
 	"os"
+	"path/filepath"
 	"strconv"
 	"time"
 )
 
 var APP = map[string]string{
 	"APP_PORT":          "9000",
-	"USER_FILES_FOLDER": "./user/files",
+	"USER_FILES_FOLDER": filepath.FromSlash("user/files"),
+	"TEMP_FOLDER":       filepath.FromSlash("user/temp"),
 	//"APP_ADDR":     "0.0.0.0:80",
 	//"LOG_FILE":     "/var/log/mw/mw.log",
 	//"FIREBASE_KEY": "/app/config/keys/firebaseAdminKey.json",
