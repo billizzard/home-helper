@@ -1,3 +1,7 @@
+### Local file server
+
+This solution is for those who have devices on different platforms (Android, iOS, Windows, Mac) and you need to transfer files between them from time to time (for me this was a headache). By launching the program from the builds folder, you will have a web interface for managing the file. Now all you need to transfer files between devices is a browser. There is no need to install any applications on the devices (only this and only on the main computer). The data is not transferred anywhere, but is stored on your computer (exactly where is described below). There is no interaction with the Internet. But remember, everyone who can access your local network (WiFi, for example) will see these files until you stop the program
+
 ### How to use
 If you do not plan to develop this platform, but just want to use the solution. Just download the archive from the `builds` folder for your architecture
 
