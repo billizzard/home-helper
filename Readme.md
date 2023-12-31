@@ -28,6 +28,7 @@ If all right you will see
 
 Go to `Settings` and you and you will see a local address,
 ![Alt text](instruction/settings.png?raw=true "Settings")
+
 which you can enter on any device 
 connected to the local network to see a folder with shared files, download and upload them (they will all be placed in the `user/files` folder, witch near `file_server` file). 
 No need to install any applications. Any device with access to this address will be able 
@@ -35,6 +36,7 @@ to see these files
 
 Go to files
 ![Alt text](instruction/file_item.png?raw=true "File item")
+
 The icon of a file or folder has two areas for clicking; if you click on the icon 
 (indicated by a square), you will go to the folder or to the details of the file 
 (there is almost empty there for now). If you click on the name (indicated by a circle), 
