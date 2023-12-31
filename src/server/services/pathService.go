@@ -4,6 +4,7 @@ import (
 	"errors"
 	"homeHelper/config"
 	"homeHelper/src/server/services/sugar"
+	url2 "net/url"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -24,7 +25,11 @@ func GetFilePathByUrl(url string) (string, error) {
 		return "", errors.New("Path not found")
 	}
 
-	path := filepath.Clean(filepath.FromSlash(url[4:]))
+	urlEsc, err := url2.QueryUnescape(url[4:])
+	if err != nil {
+		return "", errors.New("Path not found")
+	}
+	path := filepath.Clean(filepath.FromSlash(urlEsc))
 	if path == "." {
 		path = ""
 	}
