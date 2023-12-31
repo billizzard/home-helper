@@ -13,3 +13,5 @@ node_modules/
 *.sql
 !db/migrations/*
 config/keys/*
+user/files/*
+user/temp/*
