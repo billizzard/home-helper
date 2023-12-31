@@ -1,0 +1,88 @@
+/*---------------------------FILE LIST------------------*/
+.file-list_body {
+  display: flex;
+  margin: 20px 100px;
+  flex-direction: column;
+}
+
+.file-list_header {
+  width: 100%;
+  border-bottom: 3px solid $mainText;
+  margin-bottom: 30px;
+}
+
+.file-list_row {
+  padding: 15px 0;
+  border-bottom: 1px dashed #ccc;
+  //margin: 10px 0;
+
+  //color: $mainText;
+  //height: 20px;
+  //background-color: $mainBg;
+  //border-radius: 30px;
+  //box-shadow: 28px 28px 50px $menuButShadowBot,
+  //-28px -28px 50px $menuButShadowTop;
+  //border: 1px solid $menuButShadowTop;
+  //transition: box-shadow 0.1s ease-in-out;
+}
+
+/*----------------------------FILE LIST END-------------------*/
+
+.files-box {
+  display: flex;
+  flex-wrap: wrap;
+  
+
+  .file_box {
+    width: 160px;
+    text-align: center;
+    text-decoration: none;
+    color: $mainText;
+    margin-bottom: 20px;
+
+    
+  }
+
+  .body-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+  }
+}
+
+.empty-box {
+  display: flex;
+  width: 100%;
+}
+
+.file-action-btn {
+  font-size: 38px;
+  color: $mainText;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: $mainBg;
+  border-radius: 10px;
+
+  &.folder {
+    background-color: #e5e8f9;
+  }
+}
+
+.action-box {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 60px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  padding-bottom: 15px;
+
+  .action-separator {
+    border-right: 1px solid white;
+    margin-right: 20px;
+  }
+}

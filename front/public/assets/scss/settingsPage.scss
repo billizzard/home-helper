@@ -1,0 +1,30 @@
+.st-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.st-option {
+  font-size: 20px;
+  width: 100%;
+  margin: 10px 20px;
+
+  .st-option_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .st-note {
+    font-size: 16px;
+    color: $hintText;
+  }
+}

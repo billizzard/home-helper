@@ -1,0 +1,16 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+
+  .error-code {
+    font-size: 100px;
+    font-weight: bold;
+  }
+
+  .error-message {
+    font-size: 30px;
+    font-style: italic;
+  }
+}

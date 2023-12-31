@@ -251,8 +251,6 @@ func ShowFileHandler(url string) (*file.FileInfo, error) {
 	if err != nil {
 		return nil, errors.New("File not found")
 	}
-	fmt.Println("SHOW FILE HANDLER--------")
-	fmt.Println(fileInfo)
 
 	return fileInfo, nil
 }

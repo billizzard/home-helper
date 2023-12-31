@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $mainBg;
+  color: $mainText;
+}
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+// disable flickering in ios
+.fix-blink {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.shadow {
+  transition: box-shadow 0.1s ease-in-out;
+  border: 1px solid $menuButShadowTop;
+  flex-shrink: 0;
+  flex-direction: column;
+  text-decoration: none;
+  color: $mainText;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &.mp-btn {
+    width: 200px;
+    height: 200px;
+    background-color: $mainBg;
+    border-radius: 30px;
+    margin: 40px;
+    box-shadow: 28px 28px 50px $menuButShadowBot,
+      -28px -28px 50px $menuButShadowTop;
+
+    .mp-btn_title {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .bi {
+      font-size: 70px;
+    }
+  }
+
+  &.files_action_btn {
+    margin-right: 25px;
+    width: 44px;
+    height: 44px;
+    background-color: $mainBg;
+    // background-color: #dcebdc;
+    border-radius: 10px;
+    font-size: 24px;
+    box-shadow: 7px 7px 13px $menuButShadowBot, -7px -7px 13px $menuButShadowTop;
+  }
+
+  &.file-btn {
+    font-size: 38px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    color: $mainText;
+    box-shadow: 14px 14px 25px $menuButShadowBot, -14px -14px 25px $menuButShadowTop;
+    width: 100px;
+    height: 100px;
+    background-color: $mainBg;
+    border-radius: 15px;
+
+    &.folder {
+      background-color: #e5e8f9;
+    }
+
+    &.selected {
+      box-shadow: none;
+    }
+  }
+
+  &.file_back_btn {
+    margin-left: 50px;
+    margin-top: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: $mainBg;
+    border-radius: 15px;
+    font-size: 38px;
+    box-shadow: 14px 14px 25px $menuButShadowBot, -14px -14px 25px $menuButShadowTop;
+  }
+
+  &.title-btn {
+    box-shadow: 7px 7px 13px $menuButShadowBot, -7px -7px 13px $menuButShadowTop;
+  }
+
+  &.btn {
+    background-color: $mainBg;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 6px 10px;
+    box-shadow: 7px 7px 13px $menuButShadowBot, -7px -7px 13px $menuButShadowTop;
+  }
+
+  &:active {
+    transition: 0.1s;
+    box-shadow: 0 0 0 $menuButShadowBot,
+    -0 -0 0 $menuButShadowTop;
+  }
+}
+
+.title-box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  justify-content: center;
+  align-items: center;
+
+  .title-btn {
+    text-decoration: none;
+    color: $mainText;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $mainBg;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-right: 30px;
+  }
+
+  .page-title {
+    font-size: 40px;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.alerts {
+  position: fixed;
+  z-index: 2;
+  transition: 1s;
+  bottom: -50px;
+  padding: 10px;
+  border-radius: 8px;
+  left: 10px;
+  color: white;
+  font-size: 16px !important;
+
+  &.show {
+    transition: 1s;
+    bottom: 10px;
+  }
+
+  &.warning {
+    background-color: #ff5858;
+  }
+
+  &.success {
+    background-color: #4da14f;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+  .modal-content {
+    position: relative;
+    background-color: $mainBg;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px 20px;
+    border-radius: 15px;
+    max-width: 420px;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: -10px;
+    right: 3px;
+    color: $mainText;
+    font-size: 40px;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+
+form {
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 7px;
+    border: 1px solid $inputBorder;
+    border-radius: 5px;
+    color: $mainText;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  button {
+    color: $mainText;
+  }
+}

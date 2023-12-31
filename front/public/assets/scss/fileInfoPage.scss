@@ -1,0 +1,39 @@
+.fi-body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
+}
+
+.fi-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+  .fi-view {
+    max-width: 300px;
+    max-height: 500px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    i {
+      font-size: 300px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .fi-info {
+    padding-left: 20px;
+    font-size: 18px;
+
+    .fi-info-line {
+      margin-bottom: 5px;
+    }
+  }
+}

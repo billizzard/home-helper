@@ -2,7 +2,6 @@ package file
 
 import (
 	"errors"
-	"fmt"
 	"homeHelper/src/server/services"
 	"homeHelper/src/server/services/converter"
 	"os"
@@ -40,11 +39,5 @@ func NewFileInfo(path string, realPath string) (*FileInfo, error) {
 }
 
 func (fl *FileInfo) getPublicLink() string {
-	fmt.Println("PUBLIC LINK: " + fl.realPath)
 	return services.GetPublicLink(fl.realPath)
-	//if !sugar.InArray(strings.ToLower(filepath.Ext(fileName)), []string{".jpg", ".jpeg", ".png"}) {
-	//	return ""
-	//}
-	//
-	//return strings.Replace(fl.realPath, config.APP["USER_FILES_FOLDER"], "public", 1) + "/" + fileName
 }

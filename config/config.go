@@ -8,14 +8,9 @@ import (
 )
 
 var APP = map[string]string{
-	"APP_PORT":          "9000",
+	"APP_PORT":          "9030",
 	"USER_FILES_FOLDER": filepath.FromSlash("user/files"),
 	"TEMP_FOLDER":       filepath.FromSlash("user/temp"),
-	//"APP_ADDR":     "0.0.0.0:80",
-	//"LOG_FILE":     "/var/log/mw/mw.log",
-	//"FIREBASE_KEY": "/app/config/keys/firebaseAdminKey.json",
-	//"SIGN_KEY":     "_IH@#CODIThdFPnxQSYLvJaZrfZVjz-2342990457434165",
-	//"VERSION":      "1.0.0", // сделать дамп перед деплоем
 }
 
 var DB = map[string]string{

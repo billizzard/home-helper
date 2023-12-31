@@ -1,17 +1,20 @@
 package controller
 
 import (
+	"errors"
 	"github.com/kataras/iris/v12"
-	"homeHelper/src/server/dto/menuPage"
+	handler "homeHelper/src/server/handler/menu"
+	"homeHelper/src/server/services/http"
 )
 
 func MenuList(ctx iris.Context) {
-	dto := menuPage.NewMenuPage()
+	dto, err := handler.MenuListHandler()
+
+	if err != nil {
+		http.HttpBadRequest(ctx, errors.New("Can not get addresses"))
+
+		return
+	}
+
 	ctx.JSON(dto)
-	//return
-	//
-	//if err := ctx.View("menu/menu.jet.html"); err != nil {
-	//	ctx.HTML("<h3>%s</h3>", err.Error())
-	//	return
-	//}
 }
