@@ -1,6 +1,14 @@
 ### Local file server
 
-This solution is for those who have devices on different platforms (Android, iOS, Windows, Mac) and you need to transfer files between them from time to time (for me this was a headache). By launching the program from the builds folder, you will have a web interface for managing the file. Now all you need to transfer files between devices is a browser. There is no need to install any applications on the devices (only this and only on the main computer). The data is not transferred anywhere, but is stored on your computer (exactly where is described below). There is no interaction with the Internet. But remember, everyone who can access your local network (WiFi, for example) will see these files until you stop the program
+This solution is for those who have devices on different platforms (Android, iOS, Windows, Mac) and 
+you need to transfer files between them from time to time (for me this was a headache). 
+By launching the program from the builds folder, you will have a web interface for managing the file. 
+Now all you need to transfer files between devices is a browser. 
+There is no need to install any applications on the devices (only this and only on the main computer). 
+The data is not transferred anywhere, but is stored on your computer (exactly where is described below). 
+There is no interaction with the Internet. 
+But remember, everyone who can access your local network (WiFi, for example) will see these files 
+(via the web interface as described below) until you stop the program
 
 ### How to use
 If you do not plan to develop this platform, but just want to use the solution. Just download the archive from the `builds` folder for your architecture
@@ -30,7 +38,7 @@ After run file_server file you need go to browser to address `http://localhost:9
 If all right you will see
 ![Alt text](instruction/menu.png?raw=true "Main menu")
 
-Go to `Settings` and you and you will see a local address,
+Go to `Settings` and you will see a local address,
 ![Alt text](instruction/settings.png?raw=true "Settings")
 
 which you can enter on any device 
@@ -41,14 +49,15 @@ to see these files
 Go to files
 ![Alt text](instruction/file_item.png?raw=true "File item")
 
-The icon of a file or folder has two areas for clicking; if you click on the icon 
+I have 1 folder and 2 files. The icon of a file or folder has two areas for clicking; if you click on the icon 
 (indicated by a square), you will go to the folder or to the details of the file 
 (there is almost empty there for now). If you click on the name (indicated by a circle), 
 you will select a file or folder and you will have additional control buttons
-(download, rename, delete)
+(download, rename, delete). You can select many files and folders.
 
+That's all, further information for developers. Hope this helps.
 
-### Develop
+### Developing
 To run project in development mode, you need run backend
 ```bash
 make dev-run-back
