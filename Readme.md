@@ -2,7 +2,7 @@
 
 This solution is for those who have devices on different platforms (Android, iOS, Windows, Mac) and 
 you need to transfer files between them from time to time (for me this was a headache). 
-By launching the program from the builds folder, you will have a web interface for managing the file. 
+By launching the program from the `builds` folder, you will have a web interface for managing the file. 
 Now all you need to transfer files between devices is a browser. 
 There is no need to install any applications on the devices (only this and only on the main computer). 
 The data is not transferred anywhere, but is stored on your computer (exactly where is described below). 
@@ -11,7 +11,8 @@ But remember, everyone who can access your local network (WiFi, for example) wil
 (via the web interface as described below) until you stop the program
 
 ### How to use
-If you do not plan to develop this platform, but just want to use the solution. Just download the archive from the `builds` folder for your architecture
+If you do not plan to develop this platform, but just want to use the solution. 
+Just download the archive from the `builds` folder for your architecture
 
 Then unzip it and go to folder.
 You will see two folders and a file
@@ -63,7 +64,8 @@ To run project in development mode, you need run backend
 make dev-run-back
 ```
 
-And run react app (located in folder `front`)
+All frontend code placed in `front` folder. Read Readme file in this folder.
+To run react app (located in folder `front`).
 ```bash
 make dev-run-front
 ```
