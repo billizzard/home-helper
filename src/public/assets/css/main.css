@@ -81,7 +81,6 @@ footer {
   box-shadow: none;
 }
 .shadow.file_back_btn {
-  margin-left: 50px;
   margin-top: 25px;
   width: 60px;
   height: 60px;
@@ -241,6 +240,7 @@ form button {
 .files-box {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 50px;
 }
 .files-box .file_box {
   width: 160px;
@@ -248,6 +248,9 @@ form button {
   text-decoration: none;
   color: #5c5c5c;
   margin-bottom: 20px;
+}
+.files-box .file_box .file_desc {
+  word-wrap: break-word;
 }
 .files-box .body-message {
   display: flex;
@@ -280,12 +283,16 @@ form button {
 .action-box {
   display: flex;
   justify-content: flex-end;
-  margin: 0 60px;
   margin-bottom: 30px;
   padding: 0 10px;
   padding-bottom: 15px;
+  flex-wrap: wrap;
 }
-.action-box .action-separator {
+.action-box .action-subbox {
+  display: flex;
+  margin-bottom: 20px;
+}
+.action-box .action-subbox .action-separator {
   border-right: 1px solid white;
   margin-right: 20px;
 }
@@ -350,17 +357,24 @@ form button {
 
 .fi-box {
   display: flex;
-  flex-wrap: wrap;
   margin-top: 50px;
+}
+@media (max-width: 480px) {
+  .fi-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
 }
 .fi-box .fi-view {
   max-width: 300px;
-  max-height: 500px;
-  margin: 0 20px;
+  min-width: 100px;
+  margin-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  margin-bottom: 20px;
 }
 .fi-box .fi-view i {
   font-size: 300px;
@@ -370,10 +384,10 @@ form button {
   max-height: 100%;
 }
 .fi-box .fi-info {
-  padding-left: 20px;
   font-size: 18px;
 }
 .fi-box .fi-info .fi-info-line {
+  word-wrap: break-word;
   margin-bottom: 5px;
 }
 

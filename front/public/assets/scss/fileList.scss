@@ -31,7 +31,7 @@
 .files-box {
   display: flex;
   flex-wrap: wrap;
-  
+  margin: 0 50px;
 
   .file_box {
     width: 160px;
@@ -40,7 +40,9 @@
     color: $mainText;
     margin-bottom: 20px;
 
-    
+    .file_desc {
+        word-wrap: break-word;
+    }
   }
 
   .body-message {
@@ -76,13 +78,18 @@
 .action-box {
   display: flex;
   justify-content: flex-end;
-  margin: 0 60px;
   margin-bottom: 30px;
   padding: 0 10px;
   padding-bottom: 15px;
+  flex-wrap: wrap;
 
-  .action-separator {
-    border-right: 1px solid white;
-    margin-right: 20px;
+  .action-subbox {
+    display: flex;
+    margin-bottom: 20px;
+
+    .action-separator {
+      border-right: 1px solid white;
+      margin-right: 20px;
+    }
   }
 }

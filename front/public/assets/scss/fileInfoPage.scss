@@ -6,17 +6,23 @@
 
 .fi-box {
   display: flex;
-  flex-wrap: wrap;
   margin-top: 50px;
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
 
   .fi-view {
     max-width: 300px;
-    max-height: 500px;
-    margin: 0 20px;
+    min-width: 100px;
+    margin-right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    margin-bottom: 20px;
 
     i {
       font-size: 300px;
@@ -29,10 +35,10 @@
   }
 
   .fi-info {
-    padding-left: 20px;
     font-size: 18px;
 
     .fi-info-line {
+      word-wrap: break-word;
       margin-bottom: 5px;
     }
   }

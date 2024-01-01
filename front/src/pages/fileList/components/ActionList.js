@@ -24,10 +24,15 @@ function ActionList({path, selected}) {
     }
 
     return  <div className="action-box">
-        {getSelectedButtons()}
-        {selected.size > 0 ? <div className="action-separator"></div> : ""}
-        <ActionListUploadButton path={path} />
-        <ActionCreateFolderButton path={path}/>
+        <div className="action-subbox">
+            {getSelectedButtons()}
+        </div>
+
+        <div className="action-subbox">
+            {selected.size > 0 ? <div className="action-separator"></div> : ""}
+            <ActionListUploadButton path={path} />
+            <ActionCreateFolderButton path={path}/>
+        </div>
     </div>
 }
 
